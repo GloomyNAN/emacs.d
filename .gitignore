@@ -1,11 +1,6 @@
-# Compiled
-*.elc
+/auto-save-list
+/elpa
+/elpa-*
 
-# Packaging
-.cask
-
-# Backup files
-*~
-
-# Undo-tree save-files
-*.~undo-tree
+# Mac DS_Store Files
+.DS_Store
