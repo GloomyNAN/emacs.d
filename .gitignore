@@ -1,6 +1,6 @@
 /auto-save-list
 /elpa
 /elpa-*
-
+/network-security.data
 # Mac DS_Store Files
 .DS_Store
