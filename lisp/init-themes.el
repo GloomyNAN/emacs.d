@@ -49,10 +49,12 @@
 
 (setq auto-save-default nil)
 
-;;自动移动光标到新窗口
-(require 'popwin)
-(popwin-mode 1)
+; ;;自动移动光标到新窗口
+;;TODO 报错咋回事
+; (require 'popwin)
+; (popwin-mode 1)
 
 (setq ring-bell-function 'ignore) ;关闭哔哔
 (fset 'yes-or-no-p 'y-or-n-p);reset yes/no to y/n
+
 (provide 'init-themes)
