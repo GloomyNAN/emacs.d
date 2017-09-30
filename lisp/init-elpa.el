@@ -52,6 +52,6 @@ locate PACKAGE."
   (maybe-require-package 'helm)
   (maybe-require-package 'smex)
   (maybe-require-package 'yasnippet)
-  (maybe-require-package 'auto-complete))
+  (maybe-require-package 'neotree))
 
 (provide 'init-elpa)
