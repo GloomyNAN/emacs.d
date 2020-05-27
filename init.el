@@ -21,6 +21,8 @@
 (require 'init-vagrant)
 (require 'init-composer)
 (require 'init-multi-term)
+(require 'init-yasnippet)
+(require 'init-kbd)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -28,7 +30,10 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (vagrant yasnippet web-mode smex smarty-mode php-mode neotree multi-term monokai-theme helm find-file-in-project composer company auto-complete ace-jump-mode))))
+    (vagrant yasnippet web-mode smex smarty-mode php-mode neotree multi-term monokai-theme helm find-file-in-project composer company auto-complete ace-jump-mode)))
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "smtp.mxhichina.com")
+ '(smtpmail-smtp-service 25))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

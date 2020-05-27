@@ -4,7 +4,7 @@
 
 ;;laravel
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (setq web-mode-engines-alist
   '(("php"    . "\\.phtml\\'")
     ("blade"  . "\\.blade\\."))
