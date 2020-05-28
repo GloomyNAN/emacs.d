@@ -1,6 +1,6 @@
-(when (maybe-require-package 'php-mode)
-   (maybe-require-package 'web-mode)
-  (maybe-require-package 'smarty-mode))
+(use-package php-mode)
+(use-package web-mode)
+(use-package smarty-mode)
 
 ;;laravel
 (require 'web-mode)

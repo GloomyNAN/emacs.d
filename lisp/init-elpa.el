@@ -1,55 +1,62 @@
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+;; Consts to check operating system
+(defconst *is-mac* (eq system-type 'darwin)
+  "Const for system check, macOS.")
+
+(defconst *is-linux* (eq system-type 'gnu/linux)
+  "Const for system check, GNU/Linux.")
+
+(defconst *is-windows* (or (eq system-type 'ms-dos) (eq system-type 'windows-nt))
+  "Const for system check, Windows or DOS.")
+
+;; Settings for macOS key: Use command as the Meta key
+(when *is-mac*
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'super))
+  
+;;; Settings for package archives
+(setq package-archives '(("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+                         ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+  
+;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 ;;auto-install package
 
-
-;;引用purcell大神的配置 https://github.com/purcell/emacs.d
-;;; On-demand installation of packages
+(setq package-check-signature nil)
 
-(defun require-package (package &optional min-version no-refresh)
-  "Install given PACKAGE, optionally requiring MIN-VERSION.
-If NO-REFRESH is non-nil, the available package lists will not be
-re-downloaded in order to locate PACKAGE."
-  (if (package-installed-p package min-version)
-      t
-    (if (or (assoc package package-archive-contents) no-refresh)
-        (if (boundp 'package-selected-packages)
-            ;; Record this as a package the user installed explicitly
-            (package-install package nil)
-          (package-install package))
-      (progn
-        (package-refresh-contents)
-        (require-package package min-version t)))))
+(require 'package)
 
+;; Initialize the packages, avoiding a re-initialization
+(unless (bound-and-true-p package--initialized) ;; To avoid warnings on 27
+  ;; (when (version< emacs-version "27.0")
+  (setq package-enable-at-startup nil)
+  (package-initialize))
 
-(defun maybe-require-package (package &optional min-version no-refresh)
-  "Try to install PACKAGE, and return non-nil if successful.
-In the event of failure, return nil and print a warning message.
-Optionally require MIN-VERSION.  If NO-REFRESH is non-nil, the
-available package lists will not be re-downloaded in order to
-locate PACKAGE."
-  (condition-case err
-      (require-package package min-version no-refresh)
-    (error
-     (message "Couldn't install optional package `%s': %S" package err)
-     nil)))
+(unless package-archive-contents
+  (package-refresh-contents))
 
+;; Settings for use-package package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-(package-initialize) 
+;; Configure use-package prior to loading it
+(eval-and-compile
+  (setq use-package-always-ensure t
+        use-package-always-defer t
+        use-package-always-demand nil
+        use-package-expand-minimally t
+        use-package-verbose t))
+(setq load-prefer-newer t)
 
+(eval-and-compile
+  (require 'use-package))
 
-(when (maybe-require-package 'org)
-  (maybe-require-package 'monokai-theme)
-  (maybe-require-package 'find-file-in-project)
-  (maybe-require-package 'ace-jump-mode)
-  (maybe-require-package 'helm)
-  (maybe-require-package 'smex)
-  (maybe-require-package 'neotree))
+(use-package restart-emacs)
 
 (provide 'init-elpa)

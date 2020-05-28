@@ -7,36 +7,34 @@
 ;;
 ;; This file is not part of GNU Emacs.
 
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
 (package-initialize)
 
-(defconst gloomyemacs-version          "0.0.1" "GloomEmacs version.")
-(defconst gloomyemacs-emacs-min-version   "0.0.1" "Minimal version of Emacs.")
+(defconst gloomyemacs-version          "0.0.2" "GloomEmacs version.")
+(defconst gloomyemacs-emacs-min-version   "0.0.2" "Minimal version of Emacs.")
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 (require 'init-elpa)
 (require 'init-recentf)
 (require 'init-themes)
 (require 'init-php)
 (require 'init-company)
-(require 'init-vagrant)
-(require 'init-composer)
 (require 'init-multi-term)
 (require 'init-yasnippet)
 (require 'init-kbd)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (vagrant yasnippet web-mode smex smarty-mode php-mode neotree multi-term monokai-theme helm find-file-in-project composer company auto-complete ace-jump-mode)))
- '(send-mail-function (quote smtpmail-send-it))
- '(smtpmail-smtp-server "smtp.mxhichina.com")
- '(smtpmail-smtp-service 25))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(require 'init-org)
+(require 'init-popwin)
+
+(when (file-exists-p custom-file)
+  (load-file custom-file))
