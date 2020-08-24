@@ -26,7 +26,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'init-elpa)
-(require 'init-recentf)
+(require 'init-package)
 (require 'init-themes)
 (require 'init-php)
 (require 'init-company)

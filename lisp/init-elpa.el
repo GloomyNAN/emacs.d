@@ -12,23 +12,16 @@
 (when *is-mac*
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super))
-  
+
 ;;; Settings for package archives
 (setq package-archives '(("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
                          ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
   
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 ;;auto-install package
-
 (setq package-check-signature nil)
-
 (require 'package)
 
 ;; Initialize the packages, avoiding a re-initialization
@@ -56,7 +49,5 @@
 
 (eval-and-compile
   (require 'use-package))
-
-(use-package restart-emacs)
 
 (provide 'init-elpa)
