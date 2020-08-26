@@ -1,6 +1,6 @@
 ;;; init.el --- GloomyEmacs Initialization File
 ;;
-;; Copyright (c) 2017-2017 GLoomyNAN
+;; Copyright (c) 2017-2020 GLoomyNAN
 ;;
 ;; Author: GLoomy NAN <GLoomyNAN@163.com>
 ;; URL: https://github.com/GloomyNAN
@@ -17,6 +17,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
 (package-initialize)
 
 (defconst gloomyemacs-version          "0.0.2" "GloomEmacs version.")
@@ -32,7 +33,7 @@
 (require 'init-company)
 (require 'init-multi-term)
 (require 'init-yasnippet)
-(require 'init-kbd)
+(require 'init-kbd) 
 (require 'init-org)
 (require 'init-popwin)
 
