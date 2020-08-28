@@ -1,33 +1,17 @@
 ;; init some packages which has few  configurations;
 
-;; lsp
-;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-(setq lsp-keymap-prefix "s-l")
-
-(use-package lsp-mode
-  :hook
-  (php-mode . lsp-deferred)
-    :commands (lsp lsp-deferred))
-
-;; optionally
-(use-package lsp-ui :commands lsp-ui-mode)
-;; if you are helm user
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-;; if you are ivy user
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-
-;; optionally if you want to use debugger
-(use-package dap-mode)
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
-
 ;;;recent files
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
 (setq recentf-max-saved-items 1000)
 (setq recentf-exclude '("/tmp/" "/ssh:"))
- (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+;;;; Powerful editing
+
+;; iedit
+(use-package iedit)
 
 ;;;; markdown-mode
 (use-package markdown-mode
@@ -51,6 +35,8 @@
 (use-package magit
   :bind ("C-x g" . magit-status))
 
+;;;; Powerful System
+
 ;; which-key
 (use-package which-key
   :hook (after-init . which-key-mode))
@@ -62,12 +48,17 @@
   (setq ivy-use-virtual-buffers t
         enable-recursive-minibuffers t))
 
-;; neotree
-(use-package neotree
+;;;; file-explorer
+;; treemacs
+(use-package treemacs
   :init
-  (setq neo-window-fixed-size nil
-        neo-theme (if (display-graphic-p) 'icons 'arrow))
-  :bind (("<f8>" . neotree-toggle)))
+  (with-eval-after-load 'winum
+    (define-key winum-keymap (kbd "<f8>") #'treemacs-select-window))
+  :bind ("<f5>" . treemacs))
+(use-package all-the-icons)
 
+
+(use-package window-numbering)
 (use-package restart-emacs)
+
 (provide 'init-package)

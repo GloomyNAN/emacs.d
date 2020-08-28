@@ -1,18 +1,20 @@
-;;; init-consts.el --- basic settings before Emacs startup
+;; Consts to check operating system
+(defconst *is-mac* (eq system-type 'darwin)
+  "Const for system check, macOS.")
 
-;;; Commentary:
-;;; (c) Cabins, github.com/cabins/.emacs.d
+(defconst *is-linux* (eq system-type 'gnu/linux)
+  "Const for system check, GNU/Linux.")
 
-;;; Code:
+(defconst *is-windows* (or (eq system-type 'ms-dos) (eq system-type 'windows-nt))
+  "Const for system check, Windows or DOS.")
 
-;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
-(global-set-key (kbd "<f2>") 'open-init-file)
+;; Settings for macOS key: Use command as the Meta key
+(when *is-mac*
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'super))
 
-;; 快速打开配置文件
-(defun open-init-file()
-  (interactive)
-  (find-file "~/.emacs.d/init.el"))
 
 (fset 'yes-or-no-p 'y-or-n-p);reset yes/no to y/n
+
 
 (provide 'init-kbd)

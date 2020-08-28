@@ -28,14 +28,15 @@
 
 (require 'init-elpa)
 (require 'init-package)
+;;(require 'init-lsp)
 (require 'init-themes)
 (require 'init-php)
 (require 'init-company)
+;;(require 'init-frontend)
 (require 'init-multi-term)
 (require 'init-yasnippet)
 (require 'init-kbd) 
 (require 'init-org)
-(require 'init-popwin)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
