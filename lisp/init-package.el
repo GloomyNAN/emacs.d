@@ -13,23 +13,19 @@
 ;; iedit
 (use-package iedit)
 
-;;;; markdown-mode
-(use-package markdown-mode
-  :ensure t
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
+;; avy
+(use-package avy)
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+(avy-setup-default)
+(global-set-key (kbd "C-c C-j") 'avy-resume)
 
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-(autoload 'gfm-mode "markdown-mode"
-   "Major mode for editing GitHub Flavored Markdown files" t)
-(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+;; yaml
+(use-package yaml-mode
+  :mode "\\.yml\\'")
 
 ;; magit
 (use-package magit
@@ -48,7 +44,7 @@
   (setq ivy-use-virtual-buffers t
         enable-recursive-minibuffers t))
 
-;;;; file-explorer
+;;;; file explorer
 ;; treemacs
 (use-package treemacs
   :init
@@ -57,8 +53,23 @@
   :bind ("<f5>" . treemacs))
 (use-package all-the-icons)
 
-
-(use-package window-numbering)
+(use-package window-numbering
+  :hook (after-init . window-numbering-mode))
 (use-package restart-emacs)
 
+;;; Install epdfinfo via 'brew install pdf-tools' and then install the
+;;; pdf-tools elisp via the use-package below. To upgrade the epdfinfo
+;;; server, just do 'brew upgrade pdf-tools' prior to upgrading to newest
+;;; pdf-tools package using Emacs package system. If things get messed
+;;; up, just do 'brew uninstall pdf-tools', wipe out the elpa
+;;; pdf-tools package and reinstall both as at the start.
+;;(use-package pdf-tools
+;;  :ensure t
+;;  :config
+;;  (custom-set-variables
+;;    '(pdf-tools-handle-upgrades nil)) ; Use brew upgrade pdf-tools instead.
+;;  (setq pdf-info-epdfinfo-program "/usr/local/bin/epdfinfo"))
+;;(pdf-tools-install)
+
+;;(use-package keepass-mode)
 (provide 'init-package)
