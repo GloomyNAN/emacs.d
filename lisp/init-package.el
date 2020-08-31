@@ -10,6 +10,9 @@
 
 ;;;; Powerful editing
 
+;; ac-ispell
+;;(use-package ac-ispell)
+
 ;; iedit
 (use-package iedit)
 
@@ -45,12 +48,19 @@
         enable-recursive-minibuffers t))
 
 ;;;; file explorer
+
+;; projectile
+
+(use-package projectile)
+(projectile-mode +1)
+
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 ;; treemacs
 (use-package treemacs
-  :init
-  (with-eval-after-load 'winum
-    (define-key winum-keymap (kbd "<f8>") #'treemacs-select-window))
   :bind ("<f5>" . treemacs))
+(use-package treemacs-projectile)
 (use-package all-the-icons)
 
 (use-package window-numbering

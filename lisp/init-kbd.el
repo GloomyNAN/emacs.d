@@ -10,8 +10,8 @@
 
 ;; Settings for macOS key: Use command as the Meta key
 (when *is-mac*
-  (setq mac-command-modifier 'meta)
-  (setq mac-option-modifier 'super))
+  (setq mac-right-command-modifier 'meta)
+  (setq mac-right-option-modifier 'super))
 
 
 (fset 'yes-or-no-p 'y-or-n-p);reset yes/no to y/n
