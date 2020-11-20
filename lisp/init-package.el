@@ -1,4 +1,4 @@
-;; init some packages which has few  configurations;
+;;; init-package init some packages which has few  configurations;
 
 ;;;recent files
 (require 'recentf)
@@ -46,6 +46,10 @@
   :config
   (setq ivy-use-virtual-buffers t
         enable-recursive-minibuffers t))
+
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 ;;;; file explorer
 

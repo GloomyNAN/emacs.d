@@ -1,7 +1,9 @@
 (use-package php-mode
-  :mode ("\\.\\(?:php\\|phtml\\)\\'" . php-mode))
-(add-to-list 'auto-mode-alist '("\\.\\(?:php\\|phtml\\)\\'" . php-mode))
+  :mode ("\\.php$" . php-mode))
+
+(use-package phpunit)
 (use-package composer)
+
 
 ;; check
 (use-package flycheck
@@ -34,5 +36,5 @@
              ;; Return back (optional)
              (define-key php-mode-map (kbd "M-[")
                'ac-php-location-stack-back)))
-
+               
 (provide 'init-php)

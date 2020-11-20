@@ -28,10 +28,10 @@
 
 (require 'init-elpa)
 (require 'init-package)
-;;(require 'init-lsp)
 (require 'init-markdown)
 (require 'init-themes)
 (require 'init-php)
+;;(require 'init-lsp)
 (require 'init-company)
 ;;(require 'init-frontend)
 (require 'init-multi-term)

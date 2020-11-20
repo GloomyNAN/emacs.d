@@ -17,6 +17,13 @@
    "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
+(use-package pandoc-mode)
+;; brew install wkhtmltopdf
+
+(use-package pdf-tools)
+;; brew install gs to support png images
+(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
+
 (use-package blog-admin
 :init
 (progn

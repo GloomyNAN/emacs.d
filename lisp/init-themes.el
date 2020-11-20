@@ -3,7 +3,11 @@
 
 (menu-bar-mode -1)
 (electric-pair-mode t)
+
 (global-linum-mode 1) 
+
+(setq pop-up-frames nil)
+(setq ns-pop-up-frames nil)
 
 ;; auto-save-mode
 (auto-save-mode t)
