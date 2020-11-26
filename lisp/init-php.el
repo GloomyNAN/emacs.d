@@ -1,9 +1,12 @@
+;;; init-php.el --- php
+;;; Commentary:
+;;; code:
+
 (use-package php-mode
   :mode ("\\.php$" . php-mode))
 
 (use-package phpunit)
 (use-package composer)
-
 
 ;; check
 (use-package flycheck
@@ -38,3 +41,4 @@
                'ac-php-location-stack-back)))
                
 (provide 'init-php)
+;;; init-php ends here

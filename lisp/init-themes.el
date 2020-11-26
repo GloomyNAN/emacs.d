@@ -1,20 +1,30 @@
+;;; init-themes.el --- themes
+;;; Commentary:
+;;; code:
+
 (use-package monokai-theme)
 (load-theme 'monokai t)
 
 (menu-bar-mode -1)
 (electric-pair-mode t)
 
-(global-linum-mode 1) 
+;;(global-linum-mode 1)
 
 (setq pop-up-frames nil)
 (setq ns-pop-up-frames nil)
 
+;; To make system copy work with Emacs paste and Emacs copy work with system paste.
+;;(setq x-select-enable-clipboard t)
+;; or
+(setq select-enable-clipboard t)
+
 ;; auto-save-mode
 (auto-save-mode t)
-(setq auto-save-interval 60)
+(setq auto-save-interval 50)
 (setq auto-save-default t)
+(setq auto-save-timeout 30)
+(setq auto-save-no-message nil)
 
-(delete-selection-mode 1) 
 (global-hl-line-mode 1)
 (global-auto-revert-mode 1)
 (put 'set-goal-column 'disabled nil)
@@ -35,3 +45,4 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 (provide 'init-themes)
+;;; init-themes ends here

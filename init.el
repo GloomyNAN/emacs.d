@@ -31,6 +31,7 @@
 (require 'init-markdown)
 (require 'init-themes)
 (require 'init-php)
+(require 'init-git)
 ;;(require 'init-lsp)
 (require 'init-company)
 ;;(require 'init-frontend)

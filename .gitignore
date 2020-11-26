@@ -13,3 +13,5 @@ recentf
 lsp*
 transient/
 *.dat
+pandoc-mode/
+*.eld
