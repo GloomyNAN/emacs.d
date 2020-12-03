@@ -1,8 +1,11 @@
-;;; Settings for package archives
+;;; init-elpa.el --- Settings for package archives
+;;; Commentary:
+;;; Code:
+
 (setq package-archives '(("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
                          ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
                          ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))                         
+                         ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
   
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
@@ -37,3 +40,4 @@
   (require 'use-package))
 
 (provide 'init-elpa)
+;;; init-elpa ends here

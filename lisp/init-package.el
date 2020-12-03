@@ -1,9 +1,11 @@
 ;;; init-package init some packages which has few  configurations;
+;;; Commentary:
+;;; Code:
 
 ;;;recent files
 (require 'recentf)
 (recentf-mode 1)
-(setq recentf-max-menu-item 10)
+(setq recentf-max-menu-item 50)
 (setq recentf-max-saved-items 1000)
 (setq recentf-exclude '("/tmp/" "/ssh:"))
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
@@ -11,10 +13,14 @@
 ;;;; Powerful editing
 
 ;; ac-ispell
-;;(use-package ac-ispell)
+(use-package ac-ispell)
 
+;; evil
+(use-package evil)
+ 
 ;; iedit
 (use-package iedit)
+
 
 ;; avy
 (use-package avy)
@@ -43,18 +49,29 @@
   (setq ivy-use-virtual-buffers t
         enable-recursive-minibuffers t))
 
+;; Counsel
+(use-package counsel)
+;; Swiper
+(use-package swiper)
+
 (use-package exec-path-from-shell)
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+;;; command-log-mode
+(use-package command-log-mode)
+
 ;;;; file explorer
 
 ;; projectile
-(use-package projectile)
-(projectile-mode +1)
-
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(use-package projectile
+  :ensure t
+  :pin melpa-stable
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
 
 ;; treemacs
 (use-package treemacs
@@ -75,3 +92,4 @@
 (use-package restart-emacs)
 ;;(use-package keepass-mode)
 (provide 'init-package)
+;;; init-package ends here

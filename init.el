@@ -1,4 +1,7 @@
 ;;; init.el --- GloomyEmacs Initialization File
+;;; commentary:
+;;; code:
+
 ;;
 ;; Copyright (c) 2017-2020 GLoomyNAN
 ;;
@@ -26,18 +29,24 @@
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+;;(setq url-proxy-services
+  ;;    '(("http"     . "host:port")
+;;	("https"     . "https://raw.githubusercontent.com:443")))
+
 (require 'init-elpa)
 (require 'init-package)
 (require 'init-markdown)
 (require 'init-themes)
-(require 'init-php)
 (require 'init-git)
-;;(require 'init-lsp)
+(require 'init-flycheck)
+(require 'init-lsp)
+(require 'init-php)
+(require 'init-java)
 (require 'init-company)
-;;(require 'init-frontend)
+(require 'init-frontend)
 (require 'init-multi-term)
 (require 'init-yasnippet)
-(require 'init-kbd) 
+(require 'init-kbd)
 (require 'init-org)
 
 (when (file-exists-p custom-file)

@@ -2,14 +2,19 @@
 ;;; Commentary:
 ;;; code:
 
+;;; themes
 (use-package monokai-theme)
 (load-theme 'monokai t)
+
+;;(use-package doom-themes)
+;;(load-theme 'doom-one t)
+
+;;; Custom settings
 
 (menu-bar-mode -1)
 (electric-pair-mode t)
 
-;;(global-linum-mode 1)
-
+(global-linum-mode 1)
 (setq pop-up-frames nil)
 (setq ns-pop-up-frames nil)
 

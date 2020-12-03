@@ -1,4 +1,7 @@
-;; Consts to check operating system
+;;; init.kbd.el ---  Consts to check operating system
+;;; Commentary:
+;;; Code:
+
 (defconst *is-mac* (eq system-type 'darwin)
   "Const for system check, macOS.")
 
@@ -18,3 +21,4 @@
 
 
 (provide 'init-kbd)
+;;; init-kbd ends here

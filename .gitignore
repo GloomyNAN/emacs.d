@@ -15,3 +15,9 @@ transient/
 *.dat
 pandoc-mode/
 *.eld
+
+eclipse.jdt.ls/
+.dap-breakpoints
+*.cache
+request/
+workspace/
