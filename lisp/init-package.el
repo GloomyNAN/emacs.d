@@ -10,6 +10,13 @@
 (setq recentf-exclude '("/tmp/" "/ssh:"))
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+(when (daemonp)
+  (exec-path-from-shell-initialize))
+
 ;;;; Powerful editing
 
 ;; ac-ispell
@@ -20,7 +27,6 @@
  
 ;; iedit
 (use-package iedit)
-
 
 ;; avy
 (use-package avy)
@@ -54,10 +60,6 @@
 ;; Swiper
 (use-package swiper)
 
-(use-package exec-path-from-shell)
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
 ;;; command-log-mode
 (use-package command-log-mode)
 
@@ -72,6 +74,11 @@
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)))
+
+;; repair GUI Emacs perl:warning:Setting local failed
+;; LC_ALL = (unset),
+;; LANG = "en.US.UTF-8"
+(setenv "LANG" "en_US.UTF-8")
 
 ;; treemacs
 (use-package treemacs

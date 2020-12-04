@@ -30,7 +30,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;;(setq url-proxy-services
-  ;;    '(("http"     . "host:port")
+;;    '(("http"     . "host:port")
 ;;	("https"     . "https://raw.githubusercontent.com:443")))
 
 (require 'init-elpa)

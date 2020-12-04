@@ -21,3 +21,4 @@ eclipse.jdt.ls/
 *.cache
 request/
 workspace/
+eshell
