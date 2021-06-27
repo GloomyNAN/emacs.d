@@ -1,3 +1,7 @@
+;;; init-multi-term.el --- term
+;;; Commentary:
+;;; code:
+
 (use-package multi-term)
 
 (require 'multi-term)

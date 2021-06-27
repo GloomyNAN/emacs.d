@@ -10,13 +10,12 @@
 ;;(load-theme 'doom-one t)
 
 ;;; Custom settings
-
 (menu-bar-mode -1)
 (electric-pair-mode t)
 
 (global-linum-mode 1)
 (setq pop-up-frames nil)
-(setq ns-pop-up-frames nil)
+(setq ns-pop-up-frames 'fresh)
 
 ;; To make system copy work with Emacs paste and Emacs copy work with system paste.
 ;;(setq x-select-enable-clipboard t)
@@ -48,6 +47,7 @@
 (setq ring-bell-function 'ignore)
 
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-
+;(setq max-lisp-eval-depth 10000)
+;(setq max-specpdl-size 10000)
 (provide 'init-themes)
 ;;; init-themes ends here

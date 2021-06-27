@@ -8,7 +8,7 @@
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :hook(markdown-mode . pandoc-mode)
+;;  :hook(markdown-mode . pandoc-mode)
   :init (setq markdown-command "multimarkdown"))
 
 (autoload 'markdown-mode "markdown-mode"
@@ -23,8 +23,8 @@
 
 ;;; pandoc-mode
 ;; brew install wkhtmltopdf
-(use-package pandoc-mode
-  :hook(pandoc-mode . 'pandoc-load-default-settings))
+;;(use-package pandoc-mode
+;;  :hook(pandoc-mode . 'pandoc-load-default-settings))
 
 ;;; pdf-tools
 ;; brew install gs to support png images
