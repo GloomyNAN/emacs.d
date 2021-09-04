@@ -24,4 +24,4 @@ workspace/
 eshell
 
 bookmarks
-./custom.el
+custom.el
