@@ -23,4 +23,5 @@ request/
 workspace/
 eshell
 
+bookmarks
 ./custom.el
