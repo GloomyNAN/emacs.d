@@ -8,6 +8,7 @@
 (use-package lsp-mode
   :hook(;; replace XXX-mode with concrete major-mode(e. g. python-mode)
         (php-mode . lsp-deferred);; run command `npm i intelephense -g` to install.
+        (java-mode . lsp-deferred)
         ;; if you want which-key integration
         (lsp-mode . lsp-enable-which-key-integration))
   :commands (lsp lsp-deferred))

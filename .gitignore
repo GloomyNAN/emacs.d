@@ -22,3 +22,5 @@ eclipse.jdt.ls/
 request/
 workspace/
 eshell
+
+./custom.el
