@@ -8,4 +8,5 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
+(setq org-log-done 'time)
 (provide 'init-org)
