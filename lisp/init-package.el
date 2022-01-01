@@ -11,6 +11,11 @@
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 (use-package exec-path-from-shell)
+
+(require 'exec-path-from-shell)
+(dolist (var '("JAVA_HOME" "GOPATH"))
+  (add-to-list 'exec-path-from-shell-variables var))
+
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 

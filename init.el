@@ -29,9 +29,10 @@
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-;;(setq url-proxy-services
-;;    '(("http"     . "host:port")
-;;	("https"     . "https://raw.githubusercontent.com:443")))
+
+(setq url-proxy-services
+     '(("http"     . "127.0.0.1:1087")
+	("https"   . "127.0.0.1:1087")))
 
 (require 'init-elpa)
 (require 'init-package)
