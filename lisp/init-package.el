@@ -1,8 +1,8 @@
-;;; init-package init some packages which has few  configurations;
+;;; init-package --- init some packages which has few configurations;
 ;;; Commentary:
 ;;; Code:
 
-;;;recent files
+;;; recent files
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-item 50)
@@ -37,7 +37,7 @@
 (use-package avy)
 (global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-g l") 'avy-goto-line)
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
 (global-set-key (kbd "M-g e") 'avy-goto-word-0)
 (avy-setup-default)
@@ -62,6 +62,7 @@
 
 ;; Counsel
 (use-package counsel)
+
 ;; Swiper
 (use-package swiper)
 
@@ -96,11 +97,13 @@
 ;;; others
 
 ;; keyfreq
-(use-package keyfreq)
-(keyfreq-mode 1)
-(keyfreq-autosave-mode 1)
+(use-package keyfreq
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
 
 (use-package restart-emacs)
+
 ;;(use-package keepass-mode)
 (provide 'init-package)
 ;;; init-package ends here
