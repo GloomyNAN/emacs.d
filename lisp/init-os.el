@@ -22,7 +22,12 @@
   (use-package osx-dictionary
     :bind("C-c d" . 'osx-dictionary-search-word-at-point))
   (use-package counsel-osx-app
-    :bind("C-c /" . 'counsel-osx-app)))
+    :bind("C-c /" . 'counsel-osx-app))
+  (use-package osx-trash
+    :init (osx-trash-setup)
+    :config
+    (setq delete-by-moving-to-trash t)))
+
 
 (provide 'init-os)
 ;;; init-kbd ends here
