@@ -2,7 +2,6 @@
 ;;; commentary:
 ;;; code:
 
-;;
 ;; Copyright (c) 2017-2020 GLoomyNAN
 ;;
 ;; Author: GLoomy NAN <GLoomyNAN@163.com>
@@ -23,7 +22,7 @@
 
 (package-initialize)
 
-(defconst gloomyemacs-version          "0.0.2" "GloomEmacs version.")
+(defconst gloomyemacs-version          "0.0.2" "GloomyEmacs version.")
 (defconst gloomyemacs-emacs-min-version   "0.0.2" "Minimal version of Emacs.")
 
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
@@ -47,6 +46,8 @@
 (require 'init-frontend)
 (require 'init-multi-term)
 (require 'init-yasnippet)
+(require 'init-dirvish)
+(require 'init-os)
 (require 'init-kbd)
 (require 'init-org)
 

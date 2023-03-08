@@ -4,9 +4,12 @@
 
 ;;; themes
 (use-package monokai-theme)
-(load-theme 'monokai t)
+(use-package dracula-theme)
+(use-package doom-themes)
 
-;;(use-package doom-themes)
+
+;;(load-theme 'monokai t)
+(load-theme 'dracula t)
 ;;(load-theme 'doom-one t)
 
 ;;; Custom settings
@@ -49,5 +52,9 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 ;(setq max-lisp-eval-depth 10000)
 ;(setq max-specpdl-size 10000)
+
+(use-package vscode-icon
+  :commands (vscode-icon-for-file))
+
 (provide 'init-themes)
 ;;; init-themes ends here
