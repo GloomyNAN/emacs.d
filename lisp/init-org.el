@@ -1,12 +1,16 @@
-(use-package org)
+;;; init-org --- org-mode
+;;; Commentary:
+;;; Code:
 
-;;add Org-mode highlight
-(require 'org)
-(setq org-src-fontify-natively t)
+(use-package org
+  :config
+  (progn
+    (setq org-src-fontify-natively t)
+    (setq org-log-done 'time))
+  :bind (("C-c l" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c c" . org-capture)))
 
-(global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c c") 'org-capture)
-
-(setq org-log-done 'time)
 (provide 'init-org)
+;;; init-org.el ends here
+
