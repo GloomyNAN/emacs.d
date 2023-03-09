@@ -18,11 +18,11 @@
   (setq mac-right-option-modifier 'super)
 
   (use-package reveal-in-osx-finder
-    :bind ("C-c f" . 'reveal-in-osx-finder))
+    :bind ("C-x f" . 'reveal-in-osx-finder))
   (use-package osx-dictionary
-    :bind("C-c d" . 'osx-dictionary-search-word-at-point))
+    :bind("C-x C-d" . 'osx-dictionary-search-word-at-point))
   (use-package counsel-osx-app
-    :bind("C-c /" . 'counsel-osx-app))
+    :bind("C-x /" . 'counsel-osx-app))
   (use-package osx-trash
     :init (osx-trash-setup)
     :config
