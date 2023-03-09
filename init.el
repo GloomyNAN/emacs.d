@@ -44,7 +44,7 @@
 (require 'init-java)
 (require 'init-company)
 (require 'init-frontend)
-(require 'init-multi-term)
+(require 'init-terminal)
 (require 'init-yasnippet)
 (require 'init-dirvish)
 (require 'init-os)

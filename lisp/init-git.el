@@ -14,4 +14,3 @@
 
 (provide 'init-git)
 ;;; init-git ends here
-
