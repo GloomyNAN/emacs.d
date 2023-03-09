@@ -61,7 +61,8 @@
         enable-recursive-minibuffers t))
 
 ;; Counsel
-(use-package counsel)
+(use-package counsel
+  :init (counsel-mode))
 
 ;; Swiper
 (use-package swiper)
@@ -100,7 +101,13 @@
 (use-package keyfreq
   :config
   (keyfreq-mode 1)
-  (keyfreq-autosave-mode 1))
+  (keyfreq-autosave-mode 1)
+  (setq keyfreq-excluded-commands
+      '(self-insert-command
+        forward-char
+        backward-char
+        previous-line
+        next-line)))
 
 (use-package restart-emacs)
 
