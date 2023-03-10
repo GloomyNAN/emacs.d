@@ -29,9 +29,7 @@
 
 ;; evil
 (use-package evil)
- 
-;; iedit
-(use-package iedit)
+
 
 ;; avy
 (use-package avy)

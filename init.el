@@ -35,6 +35,7 @@
 
 (require 'init-elpa)
 (require 'init-package)
+(require 'init-os)
 (require 'init-editor)
 (require 'init-markdown)
 (require 'init-themes)
@@ -49,7 +50,6 @@
 (require 'init-yasnippet)
 (require 'init-dirvish)
 (require 'init-docker)
-(require 'init-os)
 (require 'init-kbd)
 (require 'init-org)
 
