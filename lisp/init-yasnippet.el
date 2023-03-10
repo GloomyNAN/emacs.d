@@ -2,10 +2,16 @@
 ;;; Commentary:
 ;;; code:
 
-(use-package yasnippet)
-(add-to-list 'load-path
-              "~/.emacs.d/plugins/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
+(use-package yasnippet
+  :init(yas-global-mode t)
+  :config
+  (setq  yas-snippet-dirs
+         '("~/.emacs.d/snippets"                 ;; personal snippets
+           "~/.emacs.d/elpa/yasnippet-snippets-20230227.1504/snippets" ;; the yasmate collection
+           ))
+  (yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
+  )
+(use-package yasnippet-snippets)
+
 (provide 'init-yasnippet)
 ;;; init-yasnippet ends here
