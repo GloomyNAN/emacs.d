@@ -48,6 +48,7 @@
 (require 'init-terminal)
 (require 'init-yasnippet)
 (require 'init-dirvish)
+(require 'init-docker)
 (require 'init-os)
 (require 'init-kbd)
 (require 'init-org)
