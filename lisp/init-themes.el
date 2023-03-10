@@ -1,13 +1,13 @@
 ;;; init-themes.el --- themes
 ;;; Commentary:
-;;; code:
+;;; 
 
 ;; Github https://github.com/emacs-dashboard/
 (use-package dashboard
-  :config
-  (dashboard-setup-startup-hook)
   :init
-  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))
+  (dashboard-setup-startup-hook)
+  :config
+    (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))
         dashboard-banner-logo-title "Welcome to the new life!"
         dashboard-startup-banner (expand-file-name "asstes/banner.txt" user-emacs-directory)
         dashboard-center-content t
@@ -21,14 +21,34 @@
         dashboard-modify-heading-icons '((recents . "file-text")
                                        (bookmarks . "book"))
         dashboard-set-navigator t
-
         dashboard-set-init-info t
-        dashboard-init-info "Are you ready?"
         dashboard-projects-switch-function 'projectile-persp-switch-project
         dashboard-week-agenda t
         dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
-  (add-to-list 'dashboard-items '(agenda) t)
-  (dashboard-open))
+
+    (if(display-graphic-p)
+        (progn
+          (setq dashboard-navigator-buttons
+                `(;;
+                  ((,(all-the-icons-octicon "mark-github" :height 1.1 :v-adjust 0.0)
+                    "Github"
+                    "Browse github"
+                    (lambda (&rest _) (browse-url "https://github.com/GloomyNAN/emacs.d")))
+                   ("★" "Star" "Show stars" (lambda (&rest _) (show-stars)) warning)
+                   ("?" "" "?/h" #'show-help nil "<" ">"))
+                  ;; line 2
+                  ((,(all-the-icons-faicon "fire" :height 1.1 :v-adjust 0.0)
+                    "EMail:GlomyNAN@Gmail.com"
+                    "send a email to me !"
+                    (lambda (&rest _) (browse-url "mailto:GloomyNAN@Gmail.com")))
+                   ("⚑" nil "Show flags" (lambda (&rest _) (message "flag")) error)))
+
+                dashboard-footer-icon (all-the-icons-octicon "dashboard"
+                                                                  :height 1.1
+                                                                  :v-adjust -0.05
+                                                                  :face 'font-lock-keyword-face))))
+    (add-to-list 'dashboard-items '(agenda))
+    )
 
 ;;; themes
 (use-package monokai-theme)
