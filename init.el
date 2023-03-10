@@ -2,9 +2,9 @@
 ;;; commentary:
 ;;; code:
 
-;; Copyright (c) 2017-2020 GLoomyNAN
+;; Copyright (c) 2017-2020 GloomyNAN
 ;;
-;; Author: GLoomy NAN <GLoomyNAN@163.com>
+;; Author: GLoomy NAN <GloomyNAN@Gmail.com>
 ;; URL: https://github.com/GloomyNAN
 ;;
 ;; This file is not part of GNU Emacs.
@@ -35,6 +35,7 @@
 
 (require 'init-elpa)
 (require 'init-package)
+(require 'init-editor)
 (require 'init-markdown)
 (require 'init-themes)
 (require 'init-git)
