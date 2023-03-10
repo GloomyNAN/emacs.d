@@ -30,6 +30,5 @@
 
 )
 
-
 (provide 'init-os)
 ;;; init-kbd ends here

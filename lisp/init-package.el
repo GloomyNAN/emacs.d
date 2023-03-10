@@ -30,6 +30,10 @@
 ;; evil
 (use-package evil)
 
+;;; pdf-tools
+;; brew install gs to support png images
+;;(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
+(use-package pdf-tools)
 
 ;; avy
 (use-package avy)
