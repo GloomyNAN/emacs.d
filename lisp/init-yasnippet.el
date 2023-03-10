@@ -1,4 +1,4 @@
-;;; init-yanippet.el --- yanippet
+;;; init-yasnippet.el --- yanippet
 ;;; Commentary:
 ;;; code:
 
@@ -12,6 +12,7 @@
   (yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
   )
 (use-package yasnippet-snippets)
-
+(use-package ivy-yasnippet
+  :bind ("C-x y" . ivy-yasnippet))
 (provide 'init-yasnippet)
 ;;; init-yasnippet ends here

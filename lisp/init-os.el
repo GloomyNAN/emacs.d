@@ -26,7 +26,9 @@
   (use-package osx-trash
     :init (osx-trash-setup)
     :config
-    (setq delete-by-moving-to-trash t)))
+    (setq delete-by-moving-to-trash t))
+
+)
 
 
 (provide 'init-os)
