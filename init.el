@@ -36,6 +36,7 @@
 (require 'init-elpa)
 (require 'init-package)
 (require 'init-os)
+(require 'init-pm)
 (require 'init-editor)
 (require 'init-markdown)
 (require 'init-themes)

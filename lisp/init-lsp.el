@@ -50,9 +50,14 @@
   :commands lsp-ivy-workspace-symbol
   :bind (
 	 :map lsp-command-map
-	 ("C-c l i" . 'lsp-ivy-workspace-symbol)))
+	 ("s" . 'lsp-ivy-workspace-symbol)))
 
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+(use-package lsp-treemacs
+  :commands lsp-treemacs-errors-list
+  :bind (
+         :map lsp-command-map
+              ("t e" . 'lsp-treemacs-errors-list)
+              ("t s" . 'lsp-treemacs-symbols)))
 
 ;; optionally if you want to use debugger
 (use-package dap-mode)
