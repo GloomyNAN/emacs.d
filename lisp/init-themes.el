@@ -63,7 +63,7 @@
         dashboard-banner-logo-title "Welcome to the new life!"
         dashboard-startup-banner (expand-file-name "asstes/banner.txt" user-emacs-directory)
         dashboard-center-content t
-        dashboard-items '((recents  . 5)
+        dashboard-items '((recents  . 15)
                         (bookmarks . 5)
                         (projects . 5)
                         (agenda . 5)

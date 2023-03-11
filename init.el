@@ -51,7 +51,10 @@
 (require 'init-yasnippet)
 (require 'init-dirvish)
 (require 'init-docker)
+(require 'init-tools)
 (require 'init-kbd)
+(require 'init-eaf)
+(require 'init-reader)
 (require 'init-org)
 
 (when (file-exists-p custom-file)

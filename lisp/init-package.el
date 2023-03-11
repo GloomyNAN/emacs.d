@@ -22,8 +22,6 @@
 (when (daemonp)
   (exec-path-from-shell-initialize))
 
-;;;; Powerful editing
-
 ;; ac-ispell
 (use-package ac-ispell)
 
@@ -49,12 +47,6 @@
 (use-package yaml-mode
   :mode "\\.yml\\'")
 
-;;;; Powerful System
-
-;; which-key
-(use-package which-key
-  :hook (after-init . which-key-mode))
-
 ;; ivy
 (use-package ivy
   :hook (after-init . ivy-mode)
@@ -69,50 +61,10 @@
 ;; Swiper
 (use-package swiper)
 
-;;; command-log-mode
-(use-package command-log-mode)
-
-;;;; file explorer
-
-;; projectile
-(use-package projectile
-  :ensure t
-  :init
-  (projectile-mode +1)
-  :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
-              ("C-c p" . projectile-command-map)))
-
 ;; repair GUI Emacs perl:warning:Setting local failed
 ;; LC_ALL = (unset),
 ;; LANG = "en.US.UTF-8"
 (setenv "LANG" "en_US.UTF-8")
 
-;; treemacs
-(use-package treemacs
-  :bind ("<f5>" . treemacs))
-(use-package treemacs-projectile)
-(use-package all-the-icons)
-
-(use-package window-numbering
-  :hook (after-init . window-numbering-mode))
-
-;;; others
-
-;; keyfreq
-(use-package keyfreq
-  :config
-  (keyfreq-mode 1)
-  (keyfreq-autosave-mode 1)
-  (setq keyfreq-excluded-commands
-      '(self-insert-command
-        forward-char
-        backward-char
-        previous-line
-        next-line)))
-
-(use-package restart-emacs)
-
-;;(use-package keepass-mode)
 (provide 'init-package)
 ;;; init-package ends here
