@@ -3,13 +3,8 @@
 ;;;
 
 ;;; themes
-(use-package monokai-theme)
-(use-package dracula-theme)
 (use-package doom-themes)
-
-;;(load-theme 'monokai t)
-(load-theme 'dracula t)
-;;(load-theme 'doom-one t)
+(load-theme 'doom-dracula t)
 
 ;;; Custom settings
 (menu-bar-mode -1)
@@ -106,6 +101,6 @@
                                                                   :face 'font-lock-keyword-face))))
     (add-to-list 'dashboard-items '(agenda))
     )
-  
+
 (provide 'init-themes)
 ;;; init-themes ends here
