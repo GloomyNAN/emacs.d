@@ -22,17 +22,6 @@
 (when (daemonp)
   (exec-path-from-shell-initialize))
 
-;; ac-ispell
-(use-package ac-ispell)
-
-;; evil
-(use-package evil)
-
-;;; pdf-tools
-;; brew install gs to support png images
-;;(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
-(use-package pdf-tools)
-
 ;; avy
 (use-package avy)
 (global-set-key (kbd "C-:") 'avy-goto-char)
