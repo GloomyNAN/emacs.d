@@ -2,13 +2,28 @@
 ;;; Commentary:
 ;;; Code:
 
-;; check
+;;; Github https://github.com/flycheck/flycheck
 (use-package flycheck
   :init
   (global-flycheck-mode)
-  (add-hook 'after-init-hook global-flycheck-mode t)
-  :custom-face
-  (flycheck-phpcs-standard 'php-phpcs))
+  :config
+  (add-to-list 'display-buffer-alist
+             `(,(rx bos "*Flycheck errors*" eos)
+              (display-buffer-reuse-window
+               display-buffer-in-side-window)
+              (side            . bottom)
+              (reusable-frames . visible)
+              (window-height   . 0.1))))
+;; Syntax checks
+;; npm install -g csslint
+;; brew install hadolint ;; DockerFile
+;; go get -u golang.org/x/lint/golint
+;; npm install -g eslint
+;; npm install jsonlint -g
+;; brew install markdownlint-cli
+;; pip install pylint
+;; gem install sqlint
+;; npm install -g js-yaml
 
 (provide 'init-flycheck)
-;;; init-flycheck ends here
+;;; init-flycheck.el ends here

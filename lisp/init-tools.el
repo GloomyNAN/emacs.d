@@ -13,6 +13,8 @@
 (use-package window-numbering
   :hook (after-init . window-numbering-mode))
 
+;;; Github https://github.com/kuanyui/tldr.el/
+(use-package tldr)
 ;; keyfreq
 (use-package keyfreq
   :config
