@@ -56,6 +56,7 @@
 (require 'init-eaf)
 (require 'init-reader)
 (require 'init-org)
+(require 'init-go)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
