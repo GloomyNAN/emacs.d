@@ -14,6 +14,7 @@
               (side            . bottom)
               (reusable-frames . visible)
               (window-height   . 0.1))))
+
 ;; Syntax checks
 ;; npm install -g csslint
 ;; brew install hadolint ;; DockerFile
