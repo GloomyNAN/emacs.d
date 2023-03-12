@@ -56,39 +56,23 @@
 
 (use-package rainbow-mode)
 
-;; todo
-(use-package ac-html
-  :config
-    ;; Set your ac-source
-  (setq ac-sources '(ac-source-haml-tag
-                     ac-source-haml-attr
-                     ac-source-haml-attrv))
-  ;; Enable auto complete mode
-  (auto-complete-mode))
-
-(defun setup-ac-for-haml ()
-  ;; Require ac-haml since we are setup haml auto completion
-  (require 'ac-haml)
-  ;; Require default data provider if you want to use
-  (require 'ac-html-default-data-provider)
-  ;; Enable data providers,
-  ;; currently only default data provider available
-  (ac-html-enable-data-provider 'ac-html-default-data-provider)
-  ;; Let ac-haml do some setup
-  (ac-haml-setup)
-  ;; Set your ac-source
-  (setq ac-sources '(ac-source-haml-tag
-                     ac-source-haml-attr
-                     ac-source-haml-attrv))
-  ;; Enable auto complete mode
-  (auto-complete-mode))
-
-(add-hook 'haml-mode-hook 'setup-ac-for-haml)
-
-;;(add-to-list 'web-mode-ac-sources-alist
-;;             '("html" . (ac-source-html-tag
-;                         ac-source-html-attr
-;;                         ac-source-html-attrv)))
+;;; Github https://github.com/osv/company-web/
+(use-package company-web
+    :after company
+    :init
+    (require 'company-web-html)                          ; load company mode html backend
+    ;; and/or
+    (require 'company-web-jade)                          ; load company mode jade backend
+    (require 'company-web-slim)                          ; load company mode slim backend
+    (add-hook 'web-mode-hook
+	      #'(lambda ()
+                  (set (make-local-variable 'company-backends) '(company-web-html))
+                  (company-mode t)))
+    :config
+    (setq company-tooltip-limit 20)                      ; bigger popup window
+    company-tooltip-align-annotations t          ; align annotations to the right tooltip border
+    company-idle-delay .3                         ; decrease delay before autocompletion popup shows
+    company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
 
 (provide 'init-frontend)
-;;; init-frontend ends here
+;;; init-frontend.el ends here
