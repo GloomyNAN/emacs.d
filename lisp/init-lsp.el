@@ -55,7 +55,10 @@
               ("t s" . 'lsp-treemacs-symbols)))
 
 ;; optionally if you want to use debugger
-(use-package dap-mode)
+(use-package dap-mode
+  :after lsp-mode
+  :config (dap-auto-configure-mode))
+
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 ;;; Github https://github.com/manateelazycat/lsp-bridge

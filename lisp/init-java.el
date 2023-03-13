@@ -3,22 +3,19 @@
 ;;; Code:
 
 (use-package hydra)
-(use-package lsp-java
-  :config
-  (add-hook 'java-mode-hook 'lsp)
-)
-
-(use-package dap-mode
-  :after lsp-mode
-  :config (dap-auto-configure-mode))
+;;(use-package lsp-java
+;;  :config
+;;  (add-hook 'java-mode-hook 'lsp)
+;;  (lsp-java-server-install-dir "~/.emacs.d/jdts")
+;;  )
 
 (use-package dap-java
   :ensure nil)
 
-(require 'lsp-java-boot)
+;;(require 'lsp-java-boot)
 ;; ;; to enable the lenses
-(add-hook 'lsp-mode-hook #'lsp-lens-mode)
-(add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
+;;(add-hook 'lsp-mode-hook #'lsp-lens-mode)
+;;(add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
 
 (provide 'init-java)
 ;;; init-java.el ends here
