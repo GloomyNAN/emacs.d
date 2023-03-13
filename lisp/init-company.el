@@ -6,4 +6,4 @@
   :init (add-hook 'after-init-hook 'global-company-mode))
 
 (provide 'init-company)
-;;; init-company ends here
+;;; init-company.el ends here
