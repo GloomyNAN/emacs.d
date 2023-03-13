@@ -7,27 +7,22 @@
     ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
     (setq lsp-keymap-prefix "C-c l")
     :hook(;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-          (php-mode . lsp-deferred);; run command `npm i intelephense -g` to install.
-
-          ;; run command `npm i -g unified-language-server`
-          (markdown-mode . lsp-deferred)
-          (gfm-mode . lsp-deferred)
-          
-          (java-mode . lsp-deferred)
+          ((java-mode php-mode markdown-mode gfm-mode web-mode css-mode js-mode js2-mode
+		    go-mode python-mode json-mode yaml-mode) . lsp-deferred)
           ;; if you want which-key integration
           (lsp-mode . lsp-enable-which-key-integration))
     :commands (lsp lsp-deferred)
-
     :config
-;;;; Performance
+    ;;;; Performance
     ;; https://emacs-lsp.github.io/lsp-mode/page/performance/
     (setq gc-cons-threshold (* 1024 1024 100) ;; 100mb
           read-process-output-max (* 1024 1024 256) ;; 256mb
 	  lsp-idle-delay 0.500
 	  treemacs-space-between-root-nodes nil
           company-idle-delay 0.0
-          company-minimum-prefix-length 1	  
-	  lsp-treemacs-sync-mode t	 
+          company-minimum-prefix-length 1
+	  lsp-treemacs-sync-mode t
+	  lsp-enable-file-watchers nil
 	  )
     (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\vendor\\'")
     (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\node_modules\\'")
@@ -63,5 +58,9 @@
 (use-package dap-mode)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
+;;; Github https://github.com/manateelazycat/lsp-bridge
+;; pip3 install epc orjson sexpdata six
+;; (use-package lsp-bridge)
+
 (provide 'init-lsp)
-;;; init-lsp ends here
+;;; init-lsp.el ends here

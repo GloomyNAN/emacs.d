@@ -41,4 +41,4 @@
   (require 'use-package))
 
 (provide 'init-elpa)
-;;; init-elpa ends here
+;;; init-elpa.el ends here
