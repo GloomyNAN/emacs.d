@@ -57,6 +57,7 @@
 (require 'init-reader)
 (require 'init-org)
 (require 'init-go)
+(require 'init-python)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))

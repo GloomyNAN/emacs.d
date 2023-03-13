@@ -12,7 +12,6 @@
 
 (use-package composer)
 
-;;(use-package company-php)
 (use-package company-php
   :after company
   :init
