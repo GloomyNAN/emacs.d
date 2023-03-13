@@ -9,4 +9,4 @@
 
 ;;; Github https://github.com/DamienCassou/json-navigator
 (use-package json-navigator)
-;;; init-json ends here
+;;; init-json.el ends here

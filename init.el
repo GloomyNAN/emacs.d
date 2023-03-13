@@ -59,6 +59,8 @@
 (require 'init-go)
 (require 'init-python)
 (require 'init-json)
+(require 'init-yaml)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
+;;; init.el ends here
