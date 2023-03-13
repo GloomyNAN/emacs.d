@@ -59,7 +59,7 @@
 (require 'init-frontend)
 (require 'init-terminal)
 (require 'init-docker)
-;; (require 'init-eaf)
+(require 'init-eaf)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
