@@ -9,6 +9,7 @@
 ;;; Custom settings
 (menu-bar-mode -1)
 (electric-pair-mode t)
+(set-face-attribute 'default nil :height 170)
 
 (global-linum-mode 1)
 (setq pop-up-frames nil)
