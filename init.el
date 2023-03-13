@@ -58,6 +58,7 @@
 (require 'init-org)
 (require 'init-go)
 (require 'init-python)
+(require 'init-json)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
