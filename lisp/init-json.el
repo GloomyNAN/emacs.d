@@ -10,3 +10,6 @@
 ;;; Github https://github.com/DamienCassou/json-navigator
 (use-package json-navigator)
 ;;; init-json.el ends here
+
+(provide 'init-json)
+;;; init-json.el ends here
