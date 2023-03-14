@@ -24,6 +24,8 @@
   (require 'eaf-map)
   (require 'eaf-markdown-previewer)
   (require 'eaf-file-browser)
+  (when *is-mac*
+    (setq eaf-chrome-bookmark-file "~/Library/Application Support/Google/Chrome/Default/Bookmarks"))
   (require 'eaf-file-manager)
   (require 'eaf-mindmap)
 ;;  (require 'eaf-vue-tailwindcss)

@@ -27,6 +27,9 @@
         previous-line
         next-line)))
 
+;;; Github https://github.com/bbatsov/super-save/tree
+(use-package super-save
+  :config (super-save-mode t))
 (use-package restart-emacs)
 
 (provide 'init-tools)
