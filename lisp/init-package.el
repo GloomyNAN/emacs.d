@@ -32,10 +32,6 @@
 (avy-setup-default)
 (global-set-key (kbd "C-c C-j") 'avy-resume)
 
-;; yaml
-(use-package yaml-mode
-  :mode "\\.yml\\'")
-
 ;; ivy
 (use-package ivy
   :hook (after-init . ivy-mode)
@@ -54,6 +50,6 @@
 ;; LC_ALL = (unset),
 ;; LANG = "en.US.UTF-8"
 (setenv "LANG" "en_US.UTF-8")
-
+(setq confirm-kill-processes nil)
 (provide 'init-package)
-;;; init-package ends here
+;;; init-package.el ends here

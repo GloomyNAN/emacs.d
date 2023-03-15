@@ -8,7 +8,7 @@
     (setq lsp-keymap-prefix "C-c l")
     :hook(;; replace XXX-mode with concrete major-mode(e. g. python-mode)
           ((java-mode php-mode markdown-mode gfm-mode web-mode css-mode js-mode js2-mode
-		    go-mode python-mode json-mode yaml-mode) . lsp-deferred)
+		    go-mode python-mode json-mode yaml-mode lua-mode) . lsp-deferred)
           ;; if you want which-key integration
           (lsp-mode . lsp-enable-which-key-integration))
     :commands (lsp lsp-deferred)
@@ -38,7 +38,9 @@
         lsp-ui-imenu-auto-refresh t))
 
 ;; if you are helm user
-;;(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+(use-package helm
+  :config (helm-mode))
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
 
 ;; if you are ivy user
 (use-package lsp-ivy

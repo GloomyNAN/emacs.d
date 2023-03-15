@@ -56,6 +56,7 @@
 (require 'init-lsp)
 (require 'init-php)
 (require 'init-java)
+(require 'init-lua)
 (require 'init-frontend)
 (require 'init-terminal)
 (require 'init-docker)

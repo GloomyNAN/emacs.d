@@ -27,8 +27,7 @@
     :init (osx-trash-setup)
     :config
     (setq delete-by-moving-to-trash t))
-
 )
 
 (provide 'init-os)
-;;; init-kbd ends here
+;;; init-os.el ends here
