@@ -6,7 +6,14 @@
 (use-package lsp-java
   :config
   (add-hook 'java-mode-hook 'lsp)
-)
+  (setq lsp-java-vmargs
+        '("-noverify"
+          "-Xmx1G"
+          "-XX:+UseG1GC"
+          "-XX:+UseStringDeduplication"
+          "-javaagent:/Users/GloomyNAN/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar"
+          "-Xbootclasspath/a:~/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar"))
+  )
 
 (use-package dap-java
   :ensure nil)
