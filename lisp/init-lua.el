@@ -8,4 +8,13 @@
 (use-package lua-mode
     :mode ("\\.lua" . lua-mode))
 
+(use-package company-lua
+  :after company
+  :hook (lua-mode . my-lua-mode-company-init)
+  :config
+  (defun my-lua-mode-company-init ()
+    (setq-local company-backends '((company-lua
+                                    company-etags
+                                    company-dabbrev-code
+                                    company-yasnippet)))))
 ;;; init-lua.el ends here

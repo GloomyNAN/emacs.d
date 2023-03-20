@@ -8,7 +8,7 @@
     (setq lsp-keymap-prefix "C-c l")
     :hook(;; replace XXX-mode with concrete major-mode(e. g. python-mode)
           ((java-mode php-mode markdown-mode gfm-mode web-mode css-mode js-mode js2-mode
-		    go-mode python-mode json-mode yaml-mode lua-mode) . lsp-deferred)
+		    go-mode python-mode json-mode yaml-mode lua-mode xml-mode nxml-mode) . lsp-deferred)
           ;; if you want which-key integration
           (lsp-mode . lsp-enable-which-key-integration))
     :commands (lsp lsp-deferred)
