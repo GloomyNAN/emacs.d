@@ -30,8 +30,8 @@
 
 
 (setq url-proxy-services
-     '(("http"     . "127.0.0.1:1087")
-	("https"   . "127.0.0.1:1087")))
+     '(("http"     . "127.0.0.1:7890")
+	("https"   . "127.0.0.1:7890")))
 
 (require 'init-elpa)
 (require 'init-package)
@@ -60,7 +60,7 @@
 (require 'init-frontend)
 (require 'init-terminal)
 (require 'init-docker)
-(require 'init-eaf)
+;;(require 'init-eaf)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))

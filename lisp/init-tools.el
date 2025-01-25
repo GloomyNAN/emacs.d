@@ -2,6 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Displaying ISO week numbers in CalendarMode
+(copy-face 'default 'calendar-iso-week-header-face)
+(set-face-attribute 'calendar-iso-week-header-face nil
+                    :height 0.7)
+(setq calendar-intermonth-header
+      (propertize "Wk"                  ; or e.g. "KW" in Germany
+                  'font-lock-face 'calendar-iso-week-header-face))
+
 ;; which-key
 (use-package which-key
   :hook (after-init . which-key-mode))
